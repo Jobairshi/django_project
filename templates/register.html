@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<html>
+<head>
+    <title>Registration Page</title>
+</head>
+<body bgcolor="Lightskyblue">
+
+    {% if msg %}
+        <script>
+        myFunction()
+        function myFunction()
+        {
+          alert(msg);
+        }
+        </script>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="name" >Name</label>
+        <input type="text" name="name" size="15" autocomplete="off"> <br> <br>
+
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" size="10"autocomplete="off"> <br> <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="off"> <br> <br>
+
+        <label for="pass">Password:</label>
+        <input type="password" id="pass" name="pass"autocomplete="off"> <br> <br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+{% endblock %}
